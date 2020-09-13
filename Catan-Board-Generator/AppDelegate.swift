@@ -17,6 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         try? AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.ambient)
         try? AVAudioSession.sharedInstance().setActive(true)
+        
+        // keep track of number of times the app is opened
+        let defaults = UserDefaults.standard
+        var numAppLaunches = defaults.integer(forKey: "numAppLaunches")
+        numAppLaunches += 1
+        defaults.set(numAppLaunches, forKey: "numAppLaunches")
+        
         return true
     }
 

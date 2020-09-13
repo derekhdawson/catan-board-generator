@@ -23,6 +23,7 @@
 		34750235250EAF96001D9067 /* FontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34750234250EAF96001D9067 /* FontView.swift */; };
 		34750237250EAFED001D9067 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34750236250EAFED001D9067 /* Board.swift */; };
 		34750239250EB4EF001D9067 /* shuffle.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 34750238250EB409001D9067 /* shuffle.m4a */; };
+		34F95766250EDB1D001BA235 /* AppStoreReviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F95765250EDB1D001BA235 /* AppStoreReviewManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		34750234250EAF96001D9067 /* FontView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontView.swift; sourceTree = "<group>"; };
 		34750236250EAFED001D9067 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		34750238250EB409001D9067 /* shuffle.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = shuffle.m4a; sourceTree = "<group>"; };
+		34F95765250EDB1D001BA235 /* AppStoreReviewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreReviewManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				34750232250EAF7F001D9067 /* Port.swift */,
 				34750234250EAF96001D9067 /* FontView.swift */,
 				34750236250EAFED001D9067 /* Board.swift */,
+				34F95765250EDB1D001BA235 /* AppStoreReviewManager.swift */,
 			);
 			path = "Catan-Board-Generator";
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 				34750217250E9983001D9067 /* ViewController.swift in Sources */,
 				34750213250E9983001D9067 /* AppDelegate.swift in Sources */,
 				34750215250E9983001D9067 /* SceneDelegate.swift in Sources */,
+				34F95766250EDB1D001BA235 /* AppStoreReviewManager.swift in Sources */,
 				3475022B250EA78A001D9067 /* SquareType.swift in Sources */,
 				34750227250E9D30001D9067 /* UITile.swift in Sources */,
 			);

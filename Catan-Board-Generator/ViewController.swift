@@ -40,6 +40,12 @@ class ViewController: UIViewController {
         portMap = getPortMap()
         createNewBoard()
         view.addSubview(boardArea)
+        
+        // checkt to get a review
+        let seconds = 0.5
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            AppStoreReviewManager.requestReviewIfAppropriate()
+        }
     }
     
     private func getPortMap() -> [Int: SquareCordSide] {
@@ -84,7 +90,7 @@ class ViewController: UIViewController {
         }
         generateButton = UIButton()
         generateButton.frame.size = CGSize(width: 180 * m, height: 45 * m)
-        generateButton.center = CGPoint(x: view.center.x, y: view.frame.height - 70 * m)
+        generateButton.center = CGPoint(x: view.center.x, y: view.frame.height - 110 * m)
         generateButton.backgroundColor = UIColor(rgb: 0xD3D3D3)
         generateButton.setTitle("Generate", for: .normal)
         generateButton.setTitleColor(UIColor(rgb: 0x434343), for: .normal)
@@ -198,28 +204,10 @@ class ViewController: UIViewController {
         
     }
     
-    func playSound2() {
-        let url = Bundle.main.url(forResource: "shuffle", withExtension: "m4a")!
-        do {
-            player = try AVAudioPlayer(contentsOf: url)
-            guard let player = player else { return }
-            
-            player.prepareToPlay()
-            DispatchQueue.global(qos: .background).async {
-                player.play()
-            }
-        } catch let error {
-            print(error.localizedDescription)
-        }
-    }
-    
     func playSound() {
         guard let url = Bundle.main.url(forResource: "shuffle", withExtension: "m4a") else { return }
 
         do {
-            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
-            try AVAudioSession.sharedInstance().setActive(true)
-
             /* The following line is required for the player to work on iOS 11. Change the file type accordingly*/
             player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
 
