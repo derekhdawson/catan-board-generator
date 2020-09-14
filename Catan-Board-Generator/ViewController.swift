@@ -2,6 +2,7 @@
 
 import UIKit
 import AVFoundation
+import Firebase
 
 
 class ViewController: UIViewController {
@@ -45,6 +46,11 @@ class ViewController: UIViewController {
         let seconds = 0.5
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             AppStoreReviewManager.requestReviewIfAppropriate()
+        }
+        
+        // keep track of users
+        Auth.auth().signInAnonymously { (authResult, error) in
+ 
         }
     }
     
@@ -118,6 +124,7 @@ class ViewController: UIViewController {
         playSound()
         clearOldBoard()
         createNewBoard()
+        Analytics.logEvent("generatedNewBoard", parameters: [:])
     }
 
     
