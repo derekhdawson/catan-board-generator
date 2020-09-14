@@ -6,10 +6,7 @@ class AppStoreReviewManager {
             let defaults = UserDefaults.standard
             let numAppLaunches = defaults.integer(forKey: "numAppLaunches")
             if (numAppLaunches >= 3 && numAppLaunches % 3 == 0) {
-                print("requestReview")
                 SKStoreReviewController.requestReview()
-            } else {
-                print("dont requestReview")
             }
         }
     }

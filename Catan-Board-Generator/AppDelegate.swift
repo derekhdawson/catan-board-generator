@@ -7,8 +7,9 @@
 
 import UIKit
 import AVFoundation
+import Firebase
 
-@main
+@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
@@ -17,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         try? AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.ambient)
         try? AVAudioSession.sharedInstance().setActive(true)
+            
+        FirebaseApp.configure()
         
         // keep track of number of times the app is opened
         let defaults = UserDefaults.standard
